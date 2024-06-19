@@ -17,8 +17,7 @@ body {
   border-style: solid;
   border-color: black;
   border-width: 5px;
-  border-radius: 25px;
-  margin-top: -100px;
+  margin-top: -80px;
   width: 100%; /* Use viewport width for responsiveness */
   max-width: 100%; /* Fixed maximum width */
   height: 100%; /* Fixed height */
