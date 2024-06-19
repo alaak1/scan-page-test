@@ -3,13 +3,13 @@
   align-items: center;
   justify-content: center;
   min-height: 80vh; /* Reduced height to avoid taking up the entire screen */
-  padding: 20px; /* Add some padding for better spacing on mobile */
+  padding: 10px; /* Add some padding for better spacing on mobile */
   box-sizing: border-box; /* Ensure padding is included in the total width and height */
 }
 
 .scannerBox {
-  width: 250px; /* Fixed width */
-  height: 600px; /* Fixed height */
+  width: 90vh; /* Fixed width */
+  height: 80vh; /* Fixed height */
   position: relative;
   display: flex;
   align-items: center;
@@ -18,8 +18,8 @@
 
 .scanner-overlay {
   position: absolute;
-  width: 70%; /* Make the overlay 70% of the scanner size */
-  height: 70%; /* Make the overlay 70% of the scanner size */
+  width: 90%; /* Make the overlay 70% of the scanner size */
+  height: 90%; /* Make the overlay 70% of the scanner size */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Center the overlay */
