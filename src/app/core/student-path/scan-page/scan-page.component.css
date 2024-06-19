@@ -14,8 +14,8 @@ body {
 }
 
 .scannerBox {
-  width: 90vw; /* Use viewport width for responsiveness */
-  max-width: 250px; /* Fixed maximum width */
+  width: 100%; /* Use viewport width for responsiveness */
+  max-width: 100%; /* Fixed maximum width */
   height: 350px; /* Fixed height */
   position: relative;
   display: flex;
