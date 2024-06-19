@@ -1,1 +1,43 @@
+.scanner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Reduced height to avoid taking up the entire screen */
+  padding: 20px; /* Add some padding for better spacing on mobile */
+  box-sizing: border-box; /* Ensure padding is included in the total width and height */
+}
+
+.scannerBox {
+  width: 250px; /* Fixed width */
+  height: 350px; /* Fixed height */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scanner-overlay {
+  position: absolute;
+  width: 70%; /* Make the overlay 70% of the scanner size */
+  height: 70%; /* Make the overlay 70% of the scanner size */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none; /* allows clicks to pass through to the scanner */
+}
+
+.scanner-overlay img {
+  width: 100%; /* Make the image cover the entire overlay area */
+  height: 100%;
+  object-fit: contain; /* Ensure the image covers the entire area without distortion */
+}
+
+zxing-scanner {
+  width: 100%; /* Ensure the scanner takes up the full width of the container */
+  height: 100%; /* Ensure the scanner takes up the full height of the container */
+}
 
