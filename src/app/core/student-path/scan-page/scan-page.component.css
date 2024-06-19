@@ -16,7 +16,7 @@ body {
 .scannerBox {
   width: 100%; /* Use viewport width for responsiveness */
   max-width: 100%; /* Fixed maximum width */
-  height: 350px; /* Fixed height */
+  height: 100%; /* Fixed height */
   position: relative;
   display: flex;
   align-items: center;
@@ -27,9 +27,9 @@ body {
   position: absolute;
   width: 70%; /* Make the overlay 70% of the scanner size */
   height: 70%; /* Make the overlay 70% of the scanner size */
-  top: 10%; /* Adjust this value to move the overlay closer to the top */
+  top: 25%; /* Adjust this value to move the overlay closer to the top */
   left: 50%;
-  transform: translate(-50%, -10%); /* Adjust the vertical translate value to move the overlay */
+  transform: translate(-50%, -25%); /* Adjust the vertical translate value to move the overlay */
   display: flex;
   align-items: center;
   justify-content: center;
