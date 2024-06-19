@@ -14,6 +14,9 @@ body {
 }
 
 .scannerBox {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 25px;
   margin-top: -100px;
   width: 100%; /* Use viewport width for responsiveness */
   max-width: 100%; /* Fixed maximum width */
