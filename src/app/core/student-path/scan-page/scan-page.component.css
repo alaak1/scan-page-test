@@ -9,7 +9,7 @@
 
 .scannerBox {
   width: 250px; /* Fixed width */
-  height: 350px; /* Fixed height */
+  height: 600px; /* Fixed height */
   position: relative;
   display: flex;
   align-items: center;
