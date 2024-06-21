@@ -38,6 +38,7 @@ export class ScanPageComponent implements OnInit {
 
   onCamerasFound(devices: MediaDeviceInfo[]): void {
     this.hasDevices = devices && devices.length > 0;
+    console.log('Video devices found:', devices);
     if (this.hasDevices) {
       this.currentDevice = devices[0];
     } else {
@@ -49,20 +50,14 @@ export class ScanPageComponent implements OnInit {
     navigator.mediaDevices.enumerateDevices().then(devices => {
       const videoDevices = devices.filter(device => device.kind === 'videoinput');
       this.hasDevices = videoDevices.length > 0;
+      console.log('Video devices found:', videoDevices);
       if (this.hasDevices) {
         this.currentDevice = videoDevices[0]; // Select the preferred device, for example the first one
       }
 
-      // Try to get user media to check for permissions
-      return navigator.mediaDevices.getUserMedia({
-        video: {
-          facingMode: 'environment',
-          width: { ideal: 1280 },
-          height: { ideal: 720 }
-        }
-      });
     }).then(() => {
       this.hasPermission = true;
+      console.log('Camera permission granted');
     }).catch(err => {
       this.hasPermission = false;
       console.error('Error accessing camera:', err);
