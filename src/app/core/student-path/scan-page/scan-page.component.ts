@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { BarcodeFormat } from '@zxing/library';
 import { QrCodeService } from '../../../qr-code.service';
@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./scan-page.component.css']
 })
 export class ScanPageComponent implements OnInit {
+  @ViewChild('scanner', { static: false }) scanner!: ZXingScannerComponent;
+
   qrResultString: string = '';
   currentDevice: MediaDeviceInfo | undefined;
   hasDevices: boolean = false;
@@ -55,6 +57,14 @@ export class ScanPageComponent implements OnInit {
         this.currentDevice = videoDevices[0]; // Select the preferred device, for example the first one
       }
 
+      // Try to get user media to check for permissions
+      return navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: 'environment',
+          width: { ideal: 1280 },
+          height: { ideal: 720 }
+        }
+      });
     }).then(() => {
       this.hasPermission = true;
       console.log('Camera permission granted');
@@ -70,6 +80,9 @@ export class ScanPageComponent implements OnInit {
     try {
       const qrData = JSON.parse(result);
       // Handle the scanned data as needed
+
+      // Stop the scanner
+      this.scanner.scanStop();
 
       // Update attendance
       this.updateAttendance(qrData);
